@@ -12,6 +12,8 @@ class TrackController extends Controller
     }
 
     public function newReproduction(Request $request) {
+
+        //insert in DB values from front public function addTrack, other file
         DB::table("tracks")->where("id", $request->_id)->increment("reproductions");
         DB::table("genres")->where("name", $request->genre)->increment("reproductions");
     }
